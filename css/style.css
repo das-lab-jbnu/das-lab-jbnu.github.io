@@ -1,0 +1,370 @@
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 로고 영역 레이아웃 */
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    gap: 15px; /* 로고와 텍스트 사이 간격 */
+}
+
+.logo-img {
+    height: 45px; /* 로고 크기 살짝 조정 */
+    width: auto;
+}
+
+.lab-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #003366; /* JBNU 상징색 혹은 네이비 톤 */
+    letter-spacing: -0.5px;
+}
+
+/* 메뉴 항목 간격 조정 */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* 메뉴 사이 간격 */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 1.15rem;
+    font-weight: 500;
+    /* text-transform: uppercase; 메뉴를 깔끔하게 대문자로 표기 */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #200066;
+}
+
+
+/* 히어로 섹션 스타일 */
+.hero {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.hero .description {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* 뉴스 섹션 스타일 */
+.news {
+    padding: 50px 0;
+}
+
+.news h2 {
+    border-bottom: 2px solid #003366;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.news ul {
+    list-style: none;
+}
+
+.news li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* ============================================================
+   TEAM PAGE STYLES (교수님 및 팀원 섹션)
+   ============================================================ */
+
+
+/* 섹션 타이틀 */
+.section-title {
+    font-size: 2.3em;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* 교수님 카드 레이아웃 (가로 정렬) */
+.pi-card {
+    display: flex; /* 사진과 정보를 가로로 배치 */
+    gap: 40px;      /* 사진과 글 사이 간격 */
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin-top: 5px;
+}
+
+/* 교수님 사진 크기 조절 */
+.pi-image img {
+    width: 250px;       /* 사진 너비 고정 */
+    height: auto;
+    border-radius: 8px; /* 살짝 둥근 모서리 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 교수님 정보 텍스트 영역 */
+.pi-info {
+    flex: 1; /* 남은 공간을 모두 차지 */
+}
+
+.pi-info h3 {
+    font-size: 1.8rem;
+    color: #002442;
+    margin-bottom: 5px;
+}
+
+.pi-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #000000;
+}
+
+.pi-dept {
+    color: #440055;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.pi-email {
+    color: #000000;
+    font-weight: bold;
+    /* margin-bottom: 15px; */
+}
+
+.pi-phone {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 학력 리스트 스타일 */
+.education-list {
+    list-style: none; /* 점 제거 */
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.education-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* 리스트 앞에 작은 점 찍기 (가짜 불렛) */
+.education-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #003366;
+    font-weight: bold;
+}
+
+/* 구분선 */
+.divider {
+    margin: 50px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+/* ============================================================
+   STUDENTS SECTION STYLES
+   ============================================================ */
+
+/* 학위 과정 타이틀 (Ph.D., Master 등) */
+.degree-title {
+    font-size: 1.4rem;
+    color: #003366;
+    border-left: 4px solid #003366; /* 왼쪽에 강조선 */
+    padding-left: 12px;
+    margin: 40px 0 20px 0;
+    font-weight: 700;
+}
+
+/* 학생들을 가로로 정렬하는 그리드 */
+.student-grid {
+    display: grid;
+    /* 최소 200px 너비를 유지하며 남은 공간을 채움 (반응형) */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* 아이템 사이 간격 */
+    margin-bottom: 20px;
+}
+
+/* 학생 개별 아이템 카드 */
+.student-item {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    background: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease; /* 마우스 올렸을 때 효과 */
+}
+
+.student-item:hover {
+    transform: translateY(-5px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 학생 사진 스타일 (원형) */
+.student-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 완전한 원형 */
+    object-fit: cover; /* 사진이 일그러지지 않게 꽉 채움 */
+    border: 3px solid #f0f0f0;
+    margin-bottom: 15px;
+}
+
+/* 학생 이름 */
+.student-info .name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* 관심 분야 */
+.student-info .interest {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 3px;
+    word-break: keep-all; /* 단어 단위 줄바꿈 */
+}
+
+/* 학생 이메일 */
+.student-info .email {
+    font-size: 0.8rem;
+    color: #003366;
+    text-decoration: none;
+}
+
+
+.professor-title {
+    /* border-left: 4px solid #4a6212;  */
+    font-size: 2rem;     /* 기존 1.4rem보다 크게 설정 */
+    margin-top: 20px;    /* 상단 여백 조절 */
+    color: #000000;      /* 색상을 조금 더 진하게 할 수도 있습니다 */
+}
+
+/* ============================================================
+   PUBLICATION SECTION STYLES
+   ============================================================ */
+
+.pub-list {
+    margin-bottom: 40px;
+}
+
+.pub-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.pub-item:hover {
+    background-color: #fcfcfc;
+}
+
+.pub-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.pub-authors {
+    font-size: 1rem;
+    color: #444;
+}
+
+.pub-authors strong {
+    color: #003366; /* 본인 이름 강조 */
+    text-decoration: underline;
+}
+
+.pub-venue {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+}
+
+.pub-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 12px;
+    background: #003366;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-radius: 4px;
+}
+
+.pub-btn:hover {
+    background: #0055aa;
+}
+
+.pub-desc {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 저자 강조 스타일 */
+.pub-authors strong {
+    color: #003366;
+    text-decoration: none;
+    border-bottom: 2px solid #003366; /* 밑줄 대신 강조 포인트 */
+}
+
+.scholar-link {
+    margin: 20px 0 30px 0;
+    padding: 15px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.scholar-link a {
+    color: #003366;
+    font-weight: 700;
+    text-decoration: underline;
+}
