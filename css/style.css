@@ -802,11 +802,35 @@ nav {
         padding: 20px;
     }
 
-    .pi-image img {
-        width: 100%;       /* 모바일에서는 사진을 꽉 차게 */
-        max-width: 250px;
+    .pi-header {
+        flex-direction: column; /* 사진과 글을 세로로 배치 */
+        align-items: center;    /* 중앙 정렬 */
+        text-align: center;
     }
 
+    .pi-image img {
+        width: 200px !important; /* 사진 크기를 시원하게 키움 */
+        height: auto;
+        margin-bottom: 20px;     /* 아래 글자와의 간격 */
+    }
+
+    /* 2. 히어로 섹션 띄어쓰기 문제 해결 (index.html) */
+    .hero-description {
+        /* 모바일에서는 양쪽 정렬(justify)을 해제해야 띄어쓰기가 안 깨집니다 */
+        text-align: center !important; 
+        text-justify: none !important;
+        text-align-last: center !important;
+        
+        font-size: 1.1rem; /* 모바일 환경에 맞는 글자 크기 조정 */
+        line-height: 1.6;
+        word-break: keep-all; /* 단어 단위 줄바꿈 유지 */
+    }
+
+    /* 네이비 박스 안의 텍스트도 중앙 정렬 */
+    .description-container {
+        padding: 20px 15px;
+    }
+    
     .pi-info h3 {
         font-size: 1.5rem;
     }
