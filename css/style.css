@@ -368,3 +368,74 @@ nav {
     font-weight: 700;
     text-decoration: underline;
 }
+
+
+/* ============================================================
+   RESPONSIVE STYLES (모바일 최적화)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. 컨테이너 여백 조정 */
+    .container {
+        width: 92%;
+    }
+
+    /* 2. 헤더/로고 정렬 (세로로 쌓기) */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap; /* 메뉴가 많으면 다음 줄로 넘김 */
+        justify-content: center;
+    }
+
+    .lab-name {
+        font-size: 1rem; /* 글자 크기 축소 */
+        text-align: center;
+    }
+
+    /* 3. 교수님(PI) 카드 (가로 -> 세로 정렬) */
+    .pi-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .pi-image img {
+        width: 100%;       /* 모바일에서는 사진을 꽉 차게 */
+        max-width: 250px;
+    }
+
+    .pi-info h3 {
+        font-size: 1.5rem;
+    }
+
+    /* 4. 학생 그리드 (한 줄에 1~2명씩) */
+    .student-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .student-item img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* 5. 타이틀 크기 조정 */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* 6. 논문 목록: 텍스트 줄바꿈 허용 */
+    .pub-item {
+        padding: 15px 0;
+    }
+
+    .pub-title {
+        font-size: 1rem;
+    }
+}
