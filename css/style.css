@@ -76,21 +76,62 @@ nav {
 
 /* 히어로 섹션 스타일 */
 .hero {
-    background-color: #f8f9fa;
-    padding: 100px 0;
+    background: linear-gradient(145deg, #021027 0%, #051937 100%);
+    padding: 50px 0;
     text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;   /* <--- 이 수치를 키우거나 줄이세요 (예: 3.5rem, 4.0rem) */
+    font-weight: 700;
     margin-bottom: 10px;
-    color: #111;
 }
 
-.hero .description {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #666;
+.univ-tag {
+    font-size: 1.2rem;   /* <--- 이 수치를 수정하세요 (예: 1.1rem, 1.4rem) */
+    font-weight: 400;
+    color: #ffffff;      /* 이전에 설정한 포인트 컬러 */
+    letter-spacing: 1px;
+}
+
+.description-container {
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    padding: 35px 25px 0;
+    border-top: 1px solid rgba(100, 255, 218, 0.2); /* 포인트 컬러 투명도 조절 */
+}
+
+.hero-description {
+    font-size: 1.4rem;
+    line-height: 1.9; /* 가독성을 위해 줄 간격 소폭 확대 */
+    color: #ccd6f6;
+    font-weight: 300;
+    
+    /* 핵심: 양쪽 끝 정렬 및 마지막 줄 중앙 정렬 */
+    text-align: justify;
+    text-justify: inter-word; /* 단어 사이 간격을 조절해 끝선을 맞춤 */
+    text-align-last: center;   /* 마지막 줄만 중앙으로 */
+    
+    /* 단어 단위로 줄바꿈하여 한 단어가 잘리는 현상 방지 */
+    word-break: keep-all; 
+}
+
+/* 강조 텍스트(strong) 스타일 세련되게 수정 */
+.hero-description strong {
+    color: #ffffff; /* 포인트 컬러로 강조 */
+    font-weight: 500;
+    text-decoration: none; /* 밑줄 대신 부드러운 배경 강조 효과 */
+    /* background: rgba(100, 255, 218, 0.1);  */
+    /* padding: 2px 4px;
+    border-radius: 3px;
+    transition: all 0.3s ease; */
+}
+
+.hero-description strong:hover {
+    background: rgba(100, 255, 218, 0.2);
+    color: #ffffff;
 }
 
 /* 뉴스 섹션 스타일 */
@@ -109,11 +150,156 @@ nav {
 }
 
 .news li {
+    font-size: 1.2rem; 
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px dashed #ddd;
 }
 
+.research-summary p {
+    margin-bottom: 30px;
+    font-size: 1.2rem; 
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+    word-break: keep-all;
+}
+
+.research-pillars h2 {
+    border-bottom: 2px solid #003366;
+    display: inline-block;
+    margin-bottom: 20px;    
+}
+
+.research-pillars {
+    padding: 0px 0;
+    margin-bottom: -20px;    
+}
+
+.research-summary strong {
+    color: #003366; /* DAS Lab 메인 컬러 */
+    font-weight: 700;
+}
+
+
+/* Home  */
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    /* margin-top: 30px; */
+}
+
+.pillar-card {
+    text-align: left; /* 요약은 중앙 정렬이지만 카드는 좌측 정렬이 가독성에 좋습니다 */
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+    border-color: #003366;
+}
+
+.pillar-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.pillar-card h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.sub-pillar {
+    margin-bottom: 20px;
+}
+
+.ai-security-card {
+    text-align: left; /* 리스트 가독성을 위해 좌측 정렬 추천 */
+}
+
+.pillar-image {
+    width: 100%;
+    /* 원하는 높이로 고정합니다. 이 값을 조절해서 맞춰보세요. */
+    height: 250px; 
+    
+    /* 이미지가 이 영역 밖으로 나가는 것을 방지합니다 */
+    overflow: hidden; 
+    
+    /* 이미지와 텍스트 사이 경계선 (선택사항) */
+    border-bottom: 1px solid #eee; 
+
+    /* 이미지를 가운데 정렬하기 위한 Flex 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9; /* 이미지가 작을 때 보일 배경색 */
+}
+
+.pillar-image img {
+    width: 100%;
+    height: 100%;
+    
+    /* 핵심: 비율을 유지하면서 박스 안에 모두 보이게 맞춤 */
+    object-fit: contain; 
+    
+    /* 만약 이미지를 꽉 채우고 넘치는 부분은 잘라도 된다면 아래 주석을 해제하고 위를 주석 처리하세요 */
+    /* object-fit: cover; */
+}
+
+.sub-pillar h4 {
+    color: #003366;
+    font-size: 1.2rem;
+    margin: 15px 0 8px 0;
+    border-left: 3px solid #003366;
+    padding-left: 10px;
+}
+
+.detail-list {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.detail-list li {
+    font-size: 1.2rem;
+    color: #555;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.detail-list li::before {
+    content: "•";
+    color: #003366;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* News List Styling */
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.news-list .date {
+    font-weight: 700;
+    color: #003366;
+    margin-right: 15px;
+}
 /* ============================================================
    TEAM PAGE STYLES (교수님 및 팀원 섹션)
    ============================================================ */
@@ -126,20 +312,38 @@ nav {
     color: #000000;
 }
 
+
 /* 교수님 카드 레이아웃 (가로 정렬) */
 .pi-card {
-    display: flex; /* 사진과 정보를 가로로 배치 */
-    gap: 40px;      /* 사진과 글 사이 간격 */
     background: #fff;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid #eee;
     border-radius: 12px;
-    margin-top: 5px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pi-header {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    /* border-bottom: 1px solid #f5f5f5;  */
+    margin-bottom: px;
+}
+
+/* 경력/학력 제목 강조 */
+.pi-details h4 {
+    color: #003366;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-left: 4px solid #003366;
+    padding-left: 10px;
 }
 
 /* 교수님 사진 크기 조절 */
 .pi-image img {
-    width: 250px;       /* 사진 너비 고정 */
+    width: 300px;       /* 사진 너비 고정 */
     height: auto;
     border-radius: 8px; /* 살짝 둥근 모서리 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -147,13 +351,21 @@ nav {
 
 /* 교수님 정보 텍스트 영역 */
 .pi-info {
-    flex: 1; /* 남은 공간을 모두 차지 */
+    flex: 1;
 }
 
 .pi-info h3 {
     font-size: 1.8rem;
     color: #002442;
     margin-bottom: 5px;
+}
+
+.pi-info h4 {
+    color: #003366;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-left: 4px solid #003366;
+    padding-left: 10px;
 }
 
 .pi-title {
@@ -180,33 +392,78 @@ nav {
     margin-bottom: 15px;
 }
 
+
+
 /* 학력 리스트 스타일 */
 .education-list {
-    list-style: none; /* 점 제거 */
+    list-style: none;
     padding-left: 0;
-    margin-top: 10px;
 }
 
 .education-list li {
-    margin-bottom: 8px;
     position: relative;
     padding-left: 15px;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
-/* 리스트 앞에 작은 점 찍기 (가짜 불렛) */
 .education-list li::before {
     content: "•";
     position: absolute;
     left: 0;
     color: #003366;
-    font-weight: bold;
 }
 
-/* 구분선 */
+
 .divider {
     margin: 50px 0;
     border: 0;
     border-top: 1px solid #eee;
+}
+
+/* Join Us Section 스타일 */
+.join-us {
+    /* padding: 60px 0; */
+    text-align: center;
+}
+
+.join-box {
+    background-color: #f8faff; /* 아주 연한 파란색 배경 */
+    padding: 20px 20px;
+    border-radius: 15px;
+    border: 1px dashed #003366; /* 연구실 테마 컬러 점선 */
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.join-box h2 {
+    margin-bottom: 20px;
+    color: #003366;
+    border-bottom: none; /* 상단 타이틀과 차별화 */
+}
+
+.join-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    word-break: keep-all;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.email-link {
+    color: #003366;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.email-link:hover {
+    color: #0055aa;
 }
 
 /* ============================================================
