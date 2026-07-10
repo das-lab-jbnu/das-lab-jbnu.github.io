@@ -533,6 +533,14 @@ nav {
     margin-bottom: 5px;
 }
 
+.student-status {
+    color: #16803a;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 5px 0;
+    word-break: keep-all;
+}
+
 /* 관심 분야 */
 .student-info .interest {
     font-size: 0.85rem;
