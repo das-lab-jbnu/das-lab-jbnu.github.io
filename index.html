@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <title>DAS Lab | Defense & Advanced Security Lab @ JBNU</title>
     
@@ -20,7 +22,6 @@
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -159,7 +160,7 @@
             </p>
             <p class="contact-info">
                 Please contact <strong>Prof. Joon Soo Yoo</strong> via email: 
-                <a href="mailto:joonsooyoo@jbnu.ac.kr" class="email-link">joonsooyoo@jbnu.ac.kr</a>
+                <span class="email-link">joonsooyoo [at] jbnu.ac.kr</span>
             </p>
         </div>
     </section>
