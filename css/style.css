@@ -511,6 +511,20 @@ nav {
     margin-bottom: 15px;
 }
 
+.student-photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #f0f0f0;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f6f8;
+    color: #8a9099;
+    font-size: 0.85rem;
+}
+
 /* 학생 이름 */
 .student-info .name {
     font-size: 1.1rem;
@@ -841,7 +855,8 @@ nav {
         gap: 15px;
     }
 
-    .student-item img {
+    .student-item img,
+    .student-photo-placeholder {
         width: 120px;
         height: 120px;
     }
