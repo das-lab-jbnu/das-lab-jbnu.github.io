@@ -648,6 +648,51 @@ nav {
     text-decoration: underline;
 }
 
+/* Miscellaneous Page Styles */
+.miscellaneous-entry {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.miscellaneous-link {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    background: #003366;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.miscellaneous-link:hover,
+.miscellaneous-link:focus-visible {
+    background: #0055aa;
+}
+
+.course-list {
+    padding-left: 1.5em;
+    margin-bottom: 40px;
+    font-size: 1.15rem;
+}
+
+.course-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.course-list a {
+    color: #003366;
+    font-weight: 700;
+    text-underline-offset: 4px;
+}
+
+.course-list a:hover,
+.course-list a:focus-visible {
+    color: #0055aa;
+}
+
 /* Gallery Page Styles */
 .gallery-grid {
     display: grid;
